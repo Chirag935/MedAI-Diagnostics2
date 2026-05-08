@@ -16,6 +16,9 @@ httpx>=0.25.2
 gunicorn==21.2.0
 supabase>=2.0.0
 slowapi>=0.1.9
-# Real CNN backend (HAM10000 + DermNet). Required for full skin classification.
-tensorflow-cpu>=2.15.0,<2.17.0
-kagglehub>=0.2.0
+# --- Optional ML deps (commented out for free-tier cloud deploys) ---
+# Uncomment the two lines below for LOCAL development to enable
+# skin-analyzer + dermnet CNN features. These are too heavy for
+# Render free tier (TensorFlow ~250MB + transitive deps).
+# tensorflow-cpu>=2.15.0,<2.17.0
+# kagglehub>=0.2.0
