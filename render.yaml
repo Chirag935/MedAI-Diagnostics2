@@ -4,14 +4,32 @@ services:
     runtime: python
     region: oregon
     plan: free
-    buildCommand: pip install -r backend/requirements.txt && cd backend && python train_symptom_model.py && python download_models.py
-    startCommand: cd backend && gunicorn main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT
+    buildCommand: pip install -r backend/requirements.txt && cd backend && python download_models.py
+    startCommand: cd backend && gunicorn main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --timeout 120
     envVars:
       - key: PYTHON_VERSION
         value: "3.11.7"
-      - key: GROQ_API_KEY
-        sync: false
+      # ---- Model file URLs (Hugging Face direct-download links) ----
       - key: MODEL_URL_SKIN
         sync: false
-      - key: MODEL_URL_SKIN_META
+      - key: MODEL_URL_DERMNET
         sync: false
+      - key: MODEL_URL_SYMPTOM_V1
+        sync: false
+      - key: MODEL_URL_SYMPTOM_V2
+        sync: false
+      # ---- Supabase ----
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      # ---- Groq (Llama 3 for AI consultant) ----
+      - key: GROQ_API_KEY
+        sync: false
+      # ---- Resend (prescription email delivery) ----
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        value: "onboarding@resend.dev"
+      - key: RESEND_FROM_NAME
+        value: "MedAI Clinic"
