@@ -1,0 +1,32 @@
+{
+    "classes": [
+        "akiec",
+        "bcc",
+        "bkl",
+        "df",
+        "mel",
+        "nv",
+        "vasc"
+    ],
+    "class_labels": {
+        "akiec": "Actinic Keratosis (Pre-cancerous)",
+        "bcc": "Basal Cell Carcinoma",
+        "bkl": "Benign Keratosis",
+        "df": "Dermatofibroma",
+        "mel": "Melanoma",
+        "nv": "Melanocytic Nevus (Mole)",
+        "vasc": "Vascular Lesion"
+    },
+    "input_shape": [
+        224,
+        224,
+        3
+    ],
+    "accuracy": 0.7184,
+    "engine": "mobilenetv2_transfer_learning",
+    "backbone": "MobileNetV2",
+    "dataset": "HAM10000",
+    "preprocessing": "mobilenet_v2.preprocess_input",
+    "epochs_head": 10,
+    "epochs_fine": 15
+}

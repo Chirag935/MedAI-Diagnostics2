@@ -1,0 +1,27 @@
+{
+    "classes": [
+        "eczema",
+        "acne",
+        "other"
+    ],
+    "class_labels": {
+        "eczema": "Eczema / Atopic Dermatitis",
+        "acne": "Acne / Rosacea",
+        "other": "Other Skin Condition"
+    },
+    "input_shape": [
+        224,
+        224,
+        3
+    ],
+    "accuracy": 0.7014,
+    "engine": "mobilenetv2_dermnet",
+    "backbone": "MobileNetV2",
+    "dataset": "DermNet (3-class: eczema/acne/other)",
+    "preprocessing": "mobilenet_v2.preprocess_input",
+    "class_counts": {
+        "eczema": 1984,
+        "acne": 840,
+        "other": 1984
+    }
+}

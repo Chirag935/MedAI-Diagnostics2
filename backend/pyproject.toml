@@ -1,0 +1,9 @@
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel>=0.41.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medai-backend"
+version = "1.0.0"
+description = "MedAI Diagnostics API"
+requires-python = ">=3.11"

@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.venv311/
+*.egg-info/
+*.db
+
+# Node
+node_modules/
+.next/
+out/
+dist/
+
+# Environment
+.env
+.env.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+retrain_log.txt
+
+# Build artifacts
+.netlify/
+frontend/.netlify/
+frontend/dist/
+
+# Models (generated at build time)
+models/mlops_feedback.db
+
+# Large datasets and model binaries (do not commit)
+backend/data/
+backend/models/*.h5
+backend/models/*.pkl
+*.h5
+*.pkl
+
+# Local model cache & training artifacts
+backend/train_log.txt
+backend/data/dermnet_3class/
+backend/data/ham10000/
